@@ -1,2 +1,2 @@
 # QuakeVizTR
-QuakeVizTR is a data visualization project that processes and visualizes earthquake data from Turkey between 2000 and 2021.
+QuakeVizTR is a data visualization project that processes and visualizes earthquake data from Turkey between 2000 and 2021. The project provides insightful visual analyses, such as the cities with the highest number of earthquakes, the distribution of earthquake magnitudes, and histograms. The goal is to enhance the understanding of the geographical and magnitude distribution of earthquakes in Turkey and raise awareness through visually engaging graphics.

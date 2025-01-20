@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container text-center">
+            <h1>{{ title }}</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <table class="table table-striped table-hover fixed_header">
+                        <thead>
+                            <tr>
+                                <th>Date and Year</th>
+                                <th>City</th>
+                                <th>Magnitude</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for index, row in data.iterrows() %}
+                                <tr>
+                                    <td>{{ row['date_time'] }}</td>
+                                    <td>{{ row['city'] }}</td>
+                                    <td>{{ row['magnitude'] }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Top_8</h5>
+                            <img src="{{ top8_histogram }}" alt="City Occurrences Histogram">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">earthquake_per_year_histogram</h5>
+                            <img src="{{ earthquake_per_year_histogram }}" alt="EQ HİS">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Scatter Plot</h5>
+                            <img src="{{scatter_plot}}" alt="Scatter Plot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
